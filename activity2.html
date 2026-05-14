@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Student Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #111827;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+
+        nav ul li a:hover {
+            background: #38bdf8;
+            color: black;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4');
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 22px;
+            width: 70%;
+            line-height: 1.8;
+        }
+
+        .hero button {
+            margin-top: 30px;
+            padding: 15px 35px;
+            border: none;
+            background: #38bdf8;
+            color: black;
+            font-size: 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            transform: scale(1.1);
+            background: white;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 70px 10%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+            color: #38bdf8;
+        }
+
+        /* PROFILE */
+
+        .profile-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-container img {
+            width: 300px;
+            border-radius: 20px;
+            border: 5px solid #38bdf8;
+        }
+
+        .profile-text {
+            max-width: 500px;
+        }
+
+        .profile-text p {
+            margin: 15px 0;
+            font-size: 20px;
+        }
+
+        .profile-text a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #1e293b;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            transition: 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: #38bdf8;
+            color: black;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* PROJECT TABLE */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        th {
+            background: #38bdf8;
+            color: black;
+            padding: 18px;
+        }
+
+        td {
+            background: #1e293b;
+            padding: 18px;
+            text-align: center;
+        }
+
+        tr:hover td {
+            background: #334155;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input,
+        textarea {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 3px solid #38bdf8;
+        }
+
+        form button {
+            background: #38bdf8;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                width: 90%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            Student Portfolio
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero">
+
+        <h1 id="welcomeMessage">
+            Welcome Student
+        </h1>
+
+        <p>
+            Creative Web Developer | Computer Science Student |
+            Passionate about Modern Web Technologies
+        </p>
+
+        <button id="welcomeBtn">
+            Click Me
+        </button>
+
+    </div>
+
+    <!-- PROFILE SECTION -->
+
+    <section id="about">
+
+        <h2 class="title">Student Profile</h2>
+
+        <div class="profile-container">
+
+            <img src="https://via.placeholder.com/300" alt="Student Photo">
+
+            <div class="profile-text">
+
+                <p><strong>Name:</strong> Suvetha S</p>
+
+                <p><strong>Department:</strong>
+                    MCA
+                </p>
+
+                <p><strong>Email:</strong>
+                    suvetha@gmail.com
+                </p>
+
+                <p>
+                    <a href="https://www.linkedin.com" target="_blank">
+
+                        Visit LinkedIn Profile
+
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="title">Technical Skills</h2>
+
+        <div class="skills-container" id="skillsContainer">
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="title">Project Details</h2>
+
+        <table>
+
+            <tr>
+                <th>Project</th>
+                <th>Technology</th>
+                <th>Duration</th>
+            </tr>
+
+            <tr>
+                <td>Portfolio Website</td>
+                <td>HTML, CSS, JavaScript</td>
+                <td>1 Month</td>
+            </tr>
+
+            <tr>
+                <td>Weather Application</td>
+                <td>JavaScript API</td>
+                <td>20 Days</td>
+            </tr>
+
+            <tr>
+                <td>Library System</td>
+                <td>Python & MySQL</td>
+                <td>2 Months</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="title">Contact Me</h2>
+
+        <div class="contact-box">
+
+            <form id="contactForm">
+
+                <input type="text" id="name" placeholder="Enter Your Name">
+
+                <input type="email" id="email" placeholder="Enter Your Email">
+
+                <input type="text" id="phone" placeholder="Enter Phone Number">
+
+                <textarea rows="5" placeholder="Enter Message">
+                </textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Modern Student Portfolio Website
+        </p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Dynamic Welcome Message
+
+        const welcome =
+            document.getElementById("welcomeMessage");
+
+        welcome.innerHTML =
+            "Welcome to My Creative Portfolio";
+
+        // Button Click Event
+
+        document.getElementById("welcomeBtn")
+            .addEventListener("click", function () {
+
+                alert("Welcome to My Portfolio Website!");
+
+            });
+
+        // Array
+
+        const skills = [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "TypeScript",
+            "Python",
+            "React JS"
+        ];
+
+        // Display Skills Dynamically
+
+        let skillData = "";
+
+        for (let i = 0; i < skills.length; i++) {
+
+            skillData += `
+                <div class="skill-card">
+                    <h3>${skills[i]}</h3>
+                    <p>Professional Knowledge</p>
+                </div>
+            `;
+        }
+
+        document.getElementById("skillsContainer")
+            .innerHTML = skillData;
+
+        // Object
+
+        const student = {
+
+            name: "John Doe",
+            department: "CSE",
+            college: "ABC College"
+
+        };
+
+        console.log(student);
+
+        // Form Validation Function
+
+        function validateForm(event) {
+
+            event.preventDefault();
+
+            let name =
+                document.getElementById("name").value;
+
+            let email =
+                document.getElementById("email").value;
+
+            let phone =
+                document.getElementById("phone").value;
+
+            // Name Validation
+
+            if (name === "") {
+
+                alert("Name cannot be empty");
+                return;
+
+            }
+
+            // Email Validation
+
+            if (!email.includes("@")) {
+
+                alert("Please enter valid email");
+                return;
+
+            }
+
+            // Phone Validation
+
+            if (phone.length != 10 || isNaN(phone)) {
+
+                alert("Phone number must contain 10 digits");
+                return;
+
+            }
+
+            // Success Alert
+
+            alert("Form Submitted Successfully!");
+
+        }
+
+        // Form Submit Event
+
+        document.getElementById("contactForm")
+            .addEventListener("submit", validateForm);
+
+    </script>
+
+</body>
+
+</html>
