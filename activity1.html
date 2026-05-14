@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Student Portfolio</title>
+
+    <!-- External CSS -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Internal CSS -->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            color:#333;
+        }
+
+        header{
+            background-color:#0f172a;
+            color:white;
+            padding:15px 20px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            flex-wrap:wrap;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .logo img{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:20px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            padding:8px 12px;
+            transition:0.3s;
+        }
+
+        /* Hover Effect */
+        nav ul li a:hover{
+            background-color:#38bdf8;
+            border-radius:5px;
+        }
+
+        section{
+            padding:30px;
+            margin:20px;
+            background:white;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            margin-bottom:15px;
+            color:#0f172a;
+        }
+
+        .profile{
+            display:flex;
+            gap:20px;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .profile img{
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            border:4px solid #38bdf8;
+        }
+
+        /* Skills List */
+        .skills ul{
+            padding-left:20px;
+        }
+
+        .skills li{
+            margin-bottom:10px;
+        }
+
+        /* Table Styling */
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:10px;
+        }
+
+        table, th, td{
+            border:1px solid #999;
+        }
+
+        th{
+            background-color:#0f172a;
+            color:white;
+        }
+
+        th, td{
+            padding:12px;
+            text-align:center;
+        }
+
+        tr:nth-child(even){
+            background-color:#f1f5f9;
+        }
+
+        /* Form Styling */
+        form{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+        input, textarea{
+            padding:10px;
+            border:1px solid #999;
+            border-radius:5px;
+        }
+
+        button{
+            background-color:#0f172a;
+            color:white;
+            padding:10px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background-color:#38bdf8;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            background-color:#0f172a;
+            color:white;
+            margin-top:20px;
+        }
+
+        /* Responsive Layout */
+        @media(max-width:768px){
+            nav ul{
+                flex-direction:column;
+                margin-top:10px;
+            }
+
+            .profile{
+                flex-direction:column;
+                text-align:center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <!-- College Logo -->
+            <img src="https://yt3.googleusercontent.com/h82zRDJJPzYbj5hBmXYkQqghHdbGSn5blo694wYLI2JT32nYPHIyzrEEd1gN8IODQrGFeV-S=s900-c-k-c0x00ffffff-no-rj" alt="College Logo">
+
+            <div>
+                <h1>KSR COLLEGE OF TECHNOLOGY</h1>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Student Profile Section -->
+    <section id="profile">
+        <h2>Student Profile</h2>
+
+        <div class="profile">
+            <img src="https://via.placeholder.com/150" alt="Student Photo">
+
+            <div>
+                <p><strong>Name:</strong> Suvetha S</p>
+                <p><strong>Department:</strong> MCA</p>
+                <p><strong>Email:</strong> suvetha@email.com</p>
+
+                <!-- Hyperlink -->
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        Visit Profile
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+
+        <!-- List -->
+        <ul>
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript</li>
+            <li>Python Programming</li>
+            <li>Database Management</li>
+            <li>Responsive Web Design</li>
+        </ul>
+    </section>
+
+    <!-- Project Details Table -->
+    <section id="projects">
+        <h2>Project Details</h2>
+
+        <!-- Table -->
+        <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Technology</th>
+                <th>Duration</th>
+            </tr>
+
+            <tr>
+                <td>Portfolio Website</td>
+                <td>HTML, CSS</td>
+                <td>1 Month</td>
+            </tr>
+
+            <tr>
+                <td>Library Management System</td>
+                <td>Python, MySQL</td>
+                <td>2 Months</td>
+            </tr>
+
+            <tr>
+                <td>Weather App</td>
+                <td>JavaScript API</td>
+                <td>3 Weeks</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2>Contact Form</h2>
+
+        <!-- Form -->
+        <form>
+            <input type="text" placeholder="Enter Your Name" required>
+
+            <input type="email" placeholder="Enter Your Email" required>
+
+            <textarea rows="5" placeholder="Enter Your Message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Student Portfolio Page</p>
+    </footer>
+
+</body>
+</html>
